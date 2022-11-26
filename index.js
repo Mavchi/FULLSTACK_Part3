@@ -26,6 +26,14 @@ const persons = [
 
 app.use(express.json())
 
+app.get('/info', (request, response) => {
+    response.send(`
+        Phonebook has into for ${persons.length} people <br />
+        <br />
+        ${new Date()}
+    `)
+})
+
 app.get('/api/persons', (request, response) => {
     response.json(persons)
 })
